@@ -54,6 +54,16 @@ $ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linu
 $ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 ```
 * Spin up your cluster 
+Spining up your cluster is as simple as typing
+```
+$ minikube start
+```
+By default, it starts with 2 CPUs and 2GB of memory. That may not be enough for experiments with some heavy projects. In the future, in case you need to grant more resources, you can define them in the ```minikube start``` command like
+```
+$minikube start --memory 8192 --cpus 2
+```
+*Do not forget to change the memory and cpus as per required* 
+
 
 ## Additional Notes
 It can get very fastidious to always have to type: ```kubectl``` before our commands. This is why I decides to create the ```k``` alias for it on my system.
