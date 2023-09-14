@@ -5,7 +5,7 @@ In this repo, you can find all my documentation on getting starting with Kuberne
 
 ## Getting started with K8S
 
-First thing you will need to start your journey in Kubernetes is to install kubectl, the Kubernetes command line tool.
+First thing you will need to start your journey in Kubernetes is to install the Kubernetes command line tool: ```kubectl```.
 Kubectl will allow you to communicate with a Kubernetes cluster's control plane, using the Kubernetes API, hence to run any 
 commands against Kubernetes clusters.<br/><br/>
 Second thing you will need is a tool to spin up a Kubernetes cluster. A Kubernetes cluster is a set of nodes that run containerized applications. Here, I will make the use of the tool ```Minikube```. Minikube is a lightweight Kubernetes implementation that creates a VM on your local machine and deploys a simple cluster containing only one node. To begin the journey, it is the perfect tool to allow us to practice and understand. Another tool we could of used to easyly spin up a cluster is ```kind```. I chose Minikube but if you rather go with kind, you can find the steps to install it [here](https://kind.sigs.k8s.io/docs/user/quick-start/).<br/><br/>
