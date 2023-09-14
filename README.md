@@ -53,5 +53,11 @@ With Ubuntu, it was very simple
 $ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 $ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 ```
+* Spin up your cluster 
+
+## Additional Notes
+It can get very fastidious to always have to type: ```kubectl``` before our commands. This is why I decides to create the ```k``` alias for it on my system.
+For ubuntu simply edit the ```~/.bachrc``` file by adding ```alias k="kubectl"``` at the end of it and sving this. Then reload your config with ```$ source ~/.bashrc```.
+
 ## Reference
 * [Offical site's Kubernetes overview](https://kubernetes.io/docs/concepts/overview/)
