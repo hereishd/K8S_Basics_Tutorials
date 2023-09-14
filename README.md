@@ -12,8 +12,20 @@ Second thing you will need is a tool to spin up a Kubernetes cluster. A Kubernet
 With these installed, you should be able to start practicing and understanding the fundamentals. 
 
 ## Installing kubectl
-Depending on your OS, different steps need to be taken. You can find the method [here](https://pwittrock.github.io/docs/tasks/tools/install-kubectl/) or on the [official kubernetes.io install tools page](https://kubernetes.io/docs/tasks/tools/) under the first paragraph: kubectl.
-
+Depending on your OS, different steps need to be taken. You can find the method [here](https://pwittrock.github.io/docs/tasks/tools/install-kubectl/) or on the [official kubernetes.io install tools page](https://kubernetes.io/docs/tasks/tools/) under the first paragraph: kubectl.<br/>
+Since I am using Ubuntu, I installed it using native package management like this
+```
+$ sudo apt-get update
+$ sudo apt-get install -y apt-transport-https ca-certificates curl
+$ curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+$ echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+$ sudo apt-get update
+$ sudo apt-get install -y kubectl
+```
+You can then ensure it has been installed running
+```
+$ kubectl version --client
+```
 ## Installing Minikube
 
 
