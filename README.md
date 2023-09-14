@@ -8,7 +8,7 @@ In this repo, you can find all my documentation on getting starting with Kuberne
 First thing you will need to start your journey in Kubernetes is to install the Kubernetes command line tool: ```kubectl```.
 Kubectl will allow you to communicate with a Kubernetes cluster's control plane, using the Kubernetes API, hence to run any 
 commands against Kubernetes clusters.<br/><br/>
-Second thing you will need is a tool to spin up a Kubernetes cluster. A Kubernetes cluster is a set of nodes that run containerized applications. Here, I will make the use of the tool ```Minikube```. Minikube is a lightweight Kubernetes implementation that creates a VM on your local machine and deploys a simple cluster containing only one node. To begin the journey, it is the perfect tool to allow us to practice and understand. Another tool we could of used to easyly spin up a cluster is ```kind```. I chose Minikube but if you rather go with kind, you can find the steps to install it [here](https://kind.sigs.k8s.io/docs/user/quick-start/).<br/><br/>
+Second thing you will need is a tool to spin up a Kubernetes cluster. A Kubernetes cluster is a set of nodes that run containerized applications. Here, I will make the use of the tool ```Minikube```. Minikube is a lightweight Kubernetes implementation that creates a VM on your local machine and deploys a simple cluster containing only one node. It focuses on making it easy to learn and develop for Kubernetes. To begin the journey, it is the perfect tool to allow us to practice and understand. Another tool we could of used to easyly spin up a cluster is ```kind```. I chose Minikube but if you rather go with kind, you can find the steps to install it [here](https://kind.sigs.k8s.io/docs/user/quick-start/).<br/><br/>
 With these installed, you should be able to start practicing and understanding the fundamentals. 
 
 ## Installing kubectl
@@ -27,7 +27,31 @@ You can then ensure it has been installed running
 $ kubectl version --client
 ```
 ## Installing Minikube
-
-
+* Before you begin
+Before being able to use minikube, all you need is Docker (or similarly compatible) container environment. I personnaly went with docker but feel free to chose.<br/>
+To install Docker on your system, follow the [official site's install instructions](https://docs.docker.com/engine/install/).<br/>
+My setps on Ubuntu
+```
+$ sudo apt update
+$ sudo apt install docker.io
+$ sudo usermod -aG docker $USERNAME
+$ sudo systemctl enable docker
+$ sudo systemctl docker start
+```
+You can validate your install by simply typing
+```
+$ docker ps
+```
+Or by running a hello-world image
+```
+$ sudo docker run hello-world
+```
+* Installing minikube
+For installing minikube, you can follow the [official site's installation steps](https://minikube.sigs.k8s.io/docs/start/) and chose your specific OS.<br/>
+With Ubuntu, it was very simple
+```
+$ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+$ sudo install minikube-linux-amd64 /usr/local/bin/minikube
+```
 ## Reference
 * [Offical site's Kubernetes overview](https://kubernetes.io/docs/concepts/overview/)
